@@ -22,7 +22,7 @@
 			if(!$winner)
 				$winner = $this->get_diagonal_winner();
 
-				return $winner;
+			return $winner;
 		}
 
 		public function toString(){

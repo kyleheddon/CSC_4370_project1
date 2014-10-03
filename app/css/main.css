@@ -17,6 +17,8 @@ body {
 	line-height: 50px;
 	text-align: center;
 }
-.mark input[type="radio"]:checked + .mask {
+/** This makes it so that when either a radio button is checked, or a hidden
+	input is present, the following .mask element shows */
+.mark input[type="radio"]:checked + .mask, .mark input[type="hidden"] + .mask {
 	display: block;
 }

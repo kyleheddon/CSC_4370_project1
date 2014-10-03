@@ -23,9 +23,6 @@ $whos_turn = 'X';
 				and whos_turn values are both submitted, we know we need to swap whos
 				turn it is.
 			-->
-			<input type="hidden" name="cell_00" value="x" />
-			<input type="hidden" name="cell_01" value="y" />
-			<input type="hidden" name="cell_02" value="y" />
 			<table id="board">
 <?php for($i = 0; $i < 3; $i++){ ?>
 				<tr>
@@ -34,6 +31,14 @@ $whos_turn = 'X';
 						<label>
 							<input name="cell" value="<?php echo "$i$j"; ?>" type="radio" />
 							<div class="mask"><?php echo $whos_turn; ?></div>
+							<!-- If the well already has a value, don't render a radio button.
+							Instead, render the value for that cell. Also render a hidden
+							input, so that the value con persist to the next page load:
+
+								<input type="hidden" name="cell_00" value="X" />
+							Don't forget to render the value of the cell for the user
+								<div class="mask">X</div>
+							-->
 						</label>
 					</td>
 	<?php } ?>
