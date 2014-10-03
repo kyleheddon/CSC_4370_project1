@@ -16,4 +16,4 @@ When you want to push up all the contents of the `/app` sub-directory, just call
 ./sync.rb
 ```
 It will as you for your codd password. Enter it, then check your codd page at 
-http://codd.cs.gsu.edu/~[your codd username]/project_1/
+http://codd.cs.gsu.edu/~your_codd_username/project_1/
