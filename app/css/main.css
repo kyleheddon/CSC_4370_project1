@@ -2,7 +2,7 @@ body {
 	font-family: Helvetica, arial, san-serif;
 }
 
-.x label, .y label{
+.mark label {
 	width: 50px;
 	height: 50px;
 	display: block;
@@ -17,6 +17,6 @@ body {
 	line-height: 50px;
 	text-align: center;
 }
-.x input[type="radio"]:checked + .mask {
+.mark input[type="radio"]:checked + .mask {
 	display: block;
 }
