@@ -31,7 +31,7 @@ $whos_turn = 'X';
 						<label>
 							<input name="cell" value="<?php echo "$i$j"; ?>" type="radio" />
 							<div class="mask"><?php echo $whos_turn; ?></div>
-							<!-- If the well already has a value, don't render a radio button.
+							<!-- If the cell already has a value, don't render a radio button.
 							Instead, render the value for that cell. Also render a hidden
 							input, so that the value con persist to the next page load:
 
