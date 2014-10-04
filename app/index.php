@@ -48,7 +48,7 @@ $whos_turn = 'X';
 			<input type="submit" value="Submit" />
 		</form>
 
-		<pre><?php
+		<pre id="debug"><?php
 				if(isset($_POST['cell'])){
 					// When the form submits, the values being submitted should be
 					//	whos_turn=X
