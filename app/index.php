@@ -7,8 +7,10 @@ function construct_board_data_arr_from_hidden_inputs(){
         for($j = 0; $j < 3; $j++){
             if(isset($_POST["cell_$i$j"])){
                 $value = $_POST["cell_$i$j"];
-                $arr[$i][$j] = $value;
+            } else {
+                $value = null;
             }
+            $arr[$i][$j] = $value;
         }
     }
 
@@ -45,21 +47,16 @@ else{
 
     </form>
 <?php } else {
+    $board_data = construct_board_data_arr_from_hidden_inputs();
+    //echo "<pre>".print_r($board_data)."</pre>";
     if(isset($_POST['cell'])) {
         $row = $_POST['cell'][0];
         $column = $_POST['cell'][1];
         $value = $whos_turn;
         $whos_turn = strtolower($whos_turn) == 'x' ? 'o' : 'x';
-
-        $board_data = construct_board_data_arr_from_hidden_inputs();
         $board_data[$row][$column] = $value;
-
-        //$board = new TicTacToeBoard($arr);
-
     }
-
-
-
+    $board = new TicTacToeBoard($board_data);
     ?>
 
     <form method="post">
@@ -86,8 +83,11 @@ else{
         </table>
         <input type="submit" value="Submit" />
     </form>
-
+    <?php if($winner = $board->get_winner()){ ?>
+        <h1><?php echo "Winner is $winner";?></h1>
+    <?php } else { ?>
+        <h1>No winner</h1>
+    <?php } ?>
 <?php } ?>
-
 </body>
 </html>
