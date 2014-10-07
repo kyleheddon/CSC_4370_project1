@@ -79,26 +79,20 @@ th, td {
 }
 
 /* Submit button */
-
+.btn-wrap {
+  text-align: center;
+}
 input[type="submit"], a.btn {
-    background: #39C;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 20px;
-    width: 130px;
-    height: 30px;
-    margin-top: 50px;
-    font-size: 16px;
-    margin-left: 45px;
-
+  background: #39C;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 35px;
+  margin-top: 50px;
+  font-size: 16px;
 }
 a.btn {
-  display: block;
-  line-height: 30px;
-  margin-top: 10px;
-  margin-left: 32px;
-  text-align: center;
+  display: inline-block;
 }
 
 input:active, a.btn:active {
@@ -110,4 +104,8 @@ form{
     margin: 50px auto;
     width: 232px;
 
+}
+select[name="whos_turn"] {
+  display: block;
+  margin: auto;
 }

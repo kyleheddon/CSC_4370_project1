@@ -45,7 +45,9 @@ else{
 						<option value="X">X</option>
 						<option value="O">O</option>
 				</select>
-				<input type="submit" value="Submit" />
+				<div class="btn-wrap">
+					<input type="submit" value="Submit" />
+				</div>
 		</form>
 <?php } else {
 		$board_data = construct_board_data_arr_from_hidden_inputs();
@@ -84,11 +86,13 @@ else{
 								</tr>
 						<?php } ?>
 				</table>
-				<?php if((isset($winner) || isset($tie)) && $winner || $tie) { ?>
-					<a href="/" class="btn">New Game</a>
-				<?php } else { ?>
-					<input type="submit" value="Submit" />
-				<?php } ?>
+				<div class="btn-wrap">
+					<?php if((isset($winner) || isset($tie)) && $winner || $tie) { ?>
+						<a href="" class="btn">New Game</a>
+					<?php } else { ?>
+						<input type="submit" value="Submit" />
+					<?php } ?>
+				</div>
 		</form>
 <?php } ?>
 </body>
