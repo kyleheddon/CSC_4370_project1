@@ -31,7 +31,7 @@ else{
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Project 1</title>
+		<title>Project 1 - Tic Tac Toe</title>
 		<link href="css/main.css" rel="stylesheet" type="text/css" />
 		<meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
 </head>
