@@ -71,7 +71,7 @@ h2 {
 
 table {
     border-collapse: collapse;
-    
+
 }
 th, td {
     padding: 0;
@@ -94,15 +94,14 @@ input[type="submit"] {
 
 }
 
-input:active { 
+input:active {
     background: #307090;
-   
+
 }
 
 form{
-    
+
     margin: 50px auto;
     width: 232px;
-    
-}
 
+}

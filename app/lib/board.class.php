@@ -74,9 +74,9 @@ class TicTacToeBoard {
         if($values[0] != null && $values[1] != null && $values[2] != null){
             $all = strtolower($values[0].$values[1].$values[2]);
             if($all == 'xxx')
-                $winner = 'x';
+                $winner = 'X';
             else if ($all == 'ooo')
-                $winner = 'o';
+                $winner = 'O';
         }
 
         return $winner;
