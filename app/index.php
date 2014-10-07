@@ -11,7 +11,7 @@ $whos_turn = 'X';
 		<meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
 	</head>
 	<body>
-		<h1>Tic Tac Toe</h1>
+		<h1 id="title">Tic Tac Toe</h1>
 		<h2><?php echo $whos_turn; ?>'s Turn - hello</h2>
 		<form method="post">
 			<input type="hidden" name="whos_turn" value="<?php echo $whos_turn; ?>" />
