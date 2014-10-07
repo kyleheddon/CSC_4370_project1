@@ -33,9 +33,7 @@
 				' | '.$b[2][0].' | '.$b[2][1].' | '.$b[2][2]." |\n";
 		}
 		
-		
 		public function is_tie(){
-			
 			foreach($this->board_data as $row){
 				foreach($row as $cell){
 					if($cell == null)
@@ -46,7 +44,7 @@
 		}
 
 		private function get_row_winner(){
-			return $this->find_straight_winner($this->board_data);
+			return $this->find_horizontal_winner($this->board_data);
 		}
 
 		private function get_column_winner(){
@@ -56,7 +54,7 @@
 				array($b[0][1], $b[1][1], $b[2][1]),
 				array($b[0][2], $b[1][2], $b[2][2])
 			);
-			return $this->find_straight_winner($data);
+			return $this->find_horizontal_winner($data);
 		}
 
 		private function get_diagonal_winner(){
@@ -68,7 +66,7 @@
 			return $winner;
 		}
 
-		private function find_straight_winner($rows){
+		private function find_horizontal_winner($rows){
 			foreach($rows as $row){
 				if($winner = $this->find_winner($row))
 					return $winner;
