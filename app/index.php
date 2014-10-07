@@ -39,6 +39,7 @@ else{
 <h1 id="title">Tic Tac Toe</h1>
 
 <?php if(!$whos_turn) { ?>
+		<h2>Pick Starting Player</h2>
 		<form method="post">
 				<select name="whos_turn">
 						<option value="X">X</option>
@@ -59,6 +60,8 @@ else{
 				<h2>Game Over - <?php echo "$winner wins";?></h2>
 		<?php } else if($board->is_tie()) { ?>
 				<h2>Game Over - Tie</h2>
+		<?php } else { ?>
+				<h2><?php echo $whos_turn; ?>'s Turn</h2>
 		<?php } ?>
 		<form method="post">
 				<input type="hidden" name="whos_turn" value="<?php echo $whos_turn; ?>" />
