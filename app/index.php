@@ -24,9 +24,9 @@ $whos_turn = 'X';
 				turn it is.
 			-->
 			<table id="board">
-<?php for($i = 0; $i < 3; $i++){ ?>
-				<tr>
-	<?php for($j = 0; $j < 3; $j++){ ?>
+            <?php for($i = 0; $i < 3; $i++){ ?>
+                            <tr>
+                <?php for($j = 0; $j < 3; $j++){ ?>
 					<td class="mark">
 						<label>
 							<input name="cell" value="<?php echo "$i$j"; ?>" type="radio" />
@@ -68,6 +68,23 @@ $whos_turn = 'X';
 						$board = new TicTacToeBoard($board_data);
 					*/
 
+                      function convert_cell_hidden_inputs_to_array()
+                      {
+                        $arr = array(array(null, null, null),array(null, null, null),array(null, null, null) );
+
+                          for ($i = 0; $i < 3; $i++) {
+                              for ($j = 0; $j < 3; $j++) {
+
+                                  if (isset($_POST['cell' . $i . $j])) {
+                                      $value = $_POST['cell'.$i.$j];
+                                     $arr[$i][$j] = $value;
+                                  }
+                              }
+
+                          }
+                          return $arr;
+                      }
+
 
 					$row = $_POST['cell'][0];
 					$column = $_POST['cell'][1];
@@ -83,6 +100,7 @@ $whos_turn = 'X';
 					print($board->toString());
 					$winner = $board->get_winner();
 				}
+
 			?></pre>
 			<?php if($winner){ ?>
 			<h2>Winner is <?php echo $winner; ?></h2>
