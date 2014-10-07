@@ -58,7 +58,7 @@ else{
 		$board = new TicTacToeBoard($board_data);
 		if($winner = $board->get_winner()){ ?>
 				<h2>Game Over - <?php echo "$winner wins";?></h2>
-		<?php } else if($board->is_tie()) { ?>
+		<?php } else if($tie = $board->is_tie()) { ?>
 				<h2>Game Over - Tie</h2>
 		<?php } else { ?>
 				<h2><?php echo $whos_turn; ?>'s Turn</h2>
@@ -84,7 +84,11 @@ else{
 								</tr>
 						<?php } ?>
 				</table>
-				<input type="submit" value="Submit" />
+				<?php if((isset($winner) || isset($tie)) && $winner || $tie) { ?>
+					<a href="/" class="btn">New Game</a>
+				<?php } else { ?>
+					<input type="submit" value="Submit" />
+				<?php } ?>
 		</form>
 <?php } ?>
 </body>
